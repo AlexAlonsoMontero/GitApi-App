@@ -1,0 +1,579 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Api para conectar con la Api de Github",
+    "description": "Api para conectar con la Api de Github",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/git-issues/{owner}/{repo}": {
+      "get": {
+        "description": "Middleware: getIssuesFromGit -- recoge todas las tareas de git para un repositorio",
+        "parameters": [
+          {
+            "name": "owner",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Usuario en GitHub"
+          },
+          {
+            "name": "repo",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Repositorio usado en GitHub"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "description1": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "info": {
+                  "type": "string",
+                  "example": "Información de la operación"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "url": {
+                        "type": "string",
+                        "example": "https://api.github.com/repos/benawad/dogehouse/issues/2880"
+                      },
+                      "repository_url": {
+                        "type": "string",
+                        "example": "https://api.github.com/repos/benawad/dogehouse"
+                      },
+                      "labels_url": {
+                        "type": "string",
+                        "example": "https://api.github.com/repos/benawad/dogehouse/issues/2880/labels{/name}"
+                      },
+                      "comments_url": {
+                        "type": "string",
+                        "example": "https://api.github.com/repos/benawad/dogehouse/issues/2880/comments"
+                      },
+                      "events_url": {
+                        "type": "string",
+                        "example": "https://api.github.com/repos/benawad/dogehouse/issues/2880/events"
+                      },
+                      "html_url": {
+                        "type": "string",
+                        "example": "https://github.com/benawad/dogehouse/issues/2880"
+                      },
+                      "id": {
+                        "type": "number",
+                        "example": 1299767726
+                      },
+                      "node_id": {
+                        "type": "string",
+                        "example": "I_kwDOFCrI2M5NeOGu"
+                      },
+                      "number": {
+                        "type": "number",
+                        "example": 2880
+                      },
+                      "title": {
+                        "type": "string",
+                        "example": "Help me, please!!!"
+                      },
+                      "user": {
+                        "type": "object",
+                        "properties": {
+                          "login": {
+                            "type": "string",
+                            "example": "Wilted98"
+                          },
+                          "id": {
+                            "type": "number",
+                            "example": 85291544
+                          },
+                          "node_id": {
+                            "type": "string",
+                            "example": "MDQ6VXNlcjg1MjkxNTQ0"
+                          },
+                          "avatar_url": {
+                            "type": "string",
+                            "example": "https://avatars.githubusercontent.com/u/85291544?v=4"
+                          },
+                          "gravatar_id": {
+                            "type": "string",
+                            "example": ""
+                          },
+                          "url": {
+                            "type": "string",
+                            "example": "https://api.github.com/users/Wilted98"
+                          },
+                          "html_url": {
+                            "type": "string",
+                            "example": "https://github.com/Wilted98"
+                          },
+                          "followers_url": {
+                            "type": "string",
+                            "example": "https://api.github.com/users/Wilted98/followers"
+                          },
+                          "following_url": {
+                            "type": "string",
+                            "example": "https://api.github.com/users/Wilted98/following{/other_user}"
+                          },
+                          "gists_url": {
+                            "type": "string",
+                            "example": "https://api.github.com/users/Wilted98/gists{/gist_id}"
+                          },
+                          "starred_url": {
+                            "type": "string",
+                            "example": "https://api.github.com/users/Wilted98/starred{/owner}{/repo}"
+                          },
+                          "subscriptions_url": {
+                            "type": "string",
+                            "example": "https://api.github.com/users/Wilted98/subscriptions"
+                          },
+                          "organizations_url": {
+                            "type": "string",
+                            "example": "https://api.github.com/users/Wilted98/orgs"
+                          },
+                          "repos_url": {
+                            "type": "string",
+                            "example": "https://api.github.com/users/Wilted98/repos"
+                          },
+                          "events_url": {
+                            "type": "string",
+                            "example": "https://api.github.com/users/Wilted98/events{/privacy}"
+                          },
+                          "received_events_url": {
+                            "type": "string",
+                            "example": "https://api.github.com/users/Wilted98/received_events"
+                          },
+                          "type": {
+                            "type": "string",
+                            "example": "User"
+                          },
+                          "site_admin": {
+                            "type": "boolean",
+                            "example": false
+                          }
+                        }
+                      },
+                      "labels": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "number",
+                              "example": 2736734423
+                            },
+                            "node_id": {
+                              "type": "string",
+                              "example": "MDU6TGFiZWwyNzM2NzM0NDIz"
+                            },
+                            "url": {
+                              "type": "string",
+                              "example": "https://api.github.com/repos/benawad/dogehouse/labels/bug"
+                            },
+                            "name": {
+                              "type": "string",
+                              "example": "bug"
+                            },
+                            "color": {
+                              "type": "string",
+                              "example": "d73a4a"
+                            },
+                            "default": {
+                              "type": "boolean",
+                              "example": true
+                            },
+                            "description": {
+                              "type": "string",
+                              "example": "Something isn't working"
+                            }
+                          }
+                        }
+                      },
+                      "state": {
+                        "type": "string",
+                        "example": "open"
+                      },
+                      "locked": {
+                        "type": "boolean",
+                        "example": false
+                      },
+                      "assignee": {},
+                      "assignees": {
+                        "type": "array",
+                        "example": [],
+                        "items": {}
+                      },
+                      "milestone": {},
+                      "comments": {
+                        "type": "number",
+                        "example": 0
+                      },
+                      "created_at": {
+                        "type": "string",
+                        "example": "2022-07-09T21:10:00Z"
+                      },
+                      "updated_at": {
+                        "type": "string",
+                        "example": "2022-07-09T21:10:00Z"
+                      },
+                      "closed_at": {},
+                      "author_association": {
+                        "type": "string",
+                        "example": "NONE"
+                      },
+                      "active_lock_reason": {},
+                      "body": {
+                        "type": "string",
+                        "example": "Please, can anyone make us a tutorial how to properly start the react native app? I need it just to learn the \"good practice\"...How can i make a fake api, or something just to bypass the login page and have access to the rest of the app?? I don't need the voice server, i just want to learn how to use navigation, typescript and the way how Ben was writting this app. I'm stuck at \"Going to the moon....\" screen. Thank you!!!"
+                      },
+                      "reactions": {
+                        "type": "object",
+                        "properties": {
+                          "url": {
+                            "type": "string",
+                            "example": "https://api.github.com/repos/benawad/dogehouse/issues/2880/reactions"
+                          },
+                          "total_count": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "+1": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "-1": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "laugh": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "hooray": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "confused": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "heart": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "rocket": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "eyes": {
+                            "type": "number",
+                            "example": 0
+                          }
+                        }
+                      },
+                      "timeline_url": {
+                        "type": "string",
+                        "example": "https://api.github.com/repos/benawad/dogehouse/issues/2880/timeline"
+                      },
+                      "performed_via_github_app": {},
+                      "state_reason": {}
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/git-repos": {
+      "get": {
+        "description": "Middleware: getIssuesFromGit -- recoge todas los repos de un usuario",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "description1": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "info": {
+                  "type": "string",
+                  "example": "Información de la operación"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "url": {
+                        "type": "string",
+                        "example": "https://api.github.com/repos/benawad/dogehouse/issues/2880"
+                      },
+                      "repository_url": {
+                        "type": "string",
+                        "example": "https://api.github.com/repos/benawad/dogehouse"
+                      },
+                      "labels_url": {
+                        "type": "string",
+                        "example": "https://api.github.com/repos/benawad/dogehouse/issues/2880/labels{/name}"
+                      },
+                      "comments_url": {
+                        "type": "string",
+                        "example": "https://api.github.com/repos/benawad/dogehouse/issues/2880/comments"
+                      },
+                      "events_url": {
+                        "type": "string",
+                        "example": "https://api.github.com/repos/benawad/dogehouse/issues/2880/events"
+                      },
+                      "html_url": {
+                        "type": "string",
+                        "example": "https://github.com/benawad/dogehouse/issues/2880"
+                      },
+                      "id": {
+                        "type": "number",
+                        "example": 1299767726
+                      },
+                      "node_id": {
+                        "type": "string",
+                        "example": "I_kwDOFCrI2M5NeOGu"
+                      },
+                      "number": {
+                        "type": "number",
+                        "example": 2880
+                      },
+                      "title": {
+                        "type": "string",
+                        "example": "Help me, please!!!"
+                      },
+                      "user": {
+                        "type": "object",
+                        "properties": {
+                          "login": {
+                            "type": "string",
+                            "example": "Wilted98"
+                          },
+                          "id": {
+                            "type": "number",
+                            "example": 85291544
+                          },
+                          "node_id": {
+                            "type": "string",
+                            "example": "MDQ6VXNlcjg1MjkxNTQ0"
+                          },
+                          "avatar_url": {
+                            "type": "string",
+                            "example": "https://avatars.githubusercontent.com/u/85291544?v=4"
+                          },
+                          "gravatar_id": {
+                            "type": "string",
+                            "example": ""
+                          },
+                          "url": {
+                            "type": "string",
+                            "example": "https://api.github.com/users/Wilted98"
+                          },
+                          "html_url": {
+                            "type": "string",
+                            "example": "https://github.com/Wilted98"
+                          },
+                          "followers_url": {
+                            "type": "string",
+                            "example": "https://api.github.com/users/Wilted98/followers"
+                          },
+                          "following_url": {
+                            "type": "string",
+                            "example": "https://api.github.com/users/Wilted98/following{/other_user}"
+                          },
+                          "gists_url": {
+                            "type": "string",
+                            "example": "https://api.github.com/users/Wilted98/gists{/gist_id}"
+                          },
+                          "starred_url": {
+                            "type": "string",
+                            "example": "https://api.github.com/users/Wilted98/starred{/owner}{/repo}"
+                          },
+                          "subscriptions_url": {
+                            "type": "string",
+                            "example": "https://api.github.com/users/Wilted98/subscriptions"
+                          },
+                          "organizations_url": {
+                            "type": "string",
+                            "example": "https://api.github.com/users/Wilted98/orgs"
+                          },
+                          "repos_url": {
+                            "type": "string",
+                            "example": "https://api.github.com/users/Wilted98/repos"
+                          },
+                          "events_url": {
+                            "type": "string",
+                            "example": "https://api.github.com/users/Wilted98/events{/privacy}"
+                          },
+                          "received_events_url": {
+                            "type": "string",
+                            "example": "https://api.github.com/users/Wilted98/received_events"
+                          },
+                          "type": {
+                            "type": "string",
+                            "example": "User"
+                          },
+                          "site_admin": {
+                            "type": "boolean",
+                            "example": false
+                          }
+                        }
+                      },
+                      "labels": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "number",
+                              "example": 2736734423
+                            },
+                            "node_id": {
+                              "type": "string",
+                              "example": "MDU6TGFiZWwyNzM2NzM0NDIz"
+                            },
+                            "url": {
+                              "type": "string",
+                              "example": "https://api.github.com/repos/benawad/dogehouse/labels/bug"
+                            },
+                            "name": {
+                              "type": "string",
+                              "example": "bug"
+                            },
+                            "color": {
+                              "type": "string",
+                              "example": "d73a4a"
+                            },
+                            "default": {
+                              "type": "boolean",
+                              "example": true
+                            },
+                            "description": {
+                              "type": "string",
+                              "example": "Something isn't working"
+                            }
+                          }
+                        }
+                      },
+                      "state": {
+                        "type": "string",
+                        "example": "open"
+                      },
+                      "locked": {
+                        "type": "boolean",
+                        "example": false
+                      },
+                      "assignee": {},
+                      "assignees": {
+                        "type": "array",
+                        "example": [],
+                        "items": {}
+                      },
+                      "milestone": {},
+                      "comments": {
+                        "type": "number",
+                        "example": 0
+                      },
+                      "created_at": {
+                        "type": "string",
+                        "example": "2022-07-09T21:10:00Z"
+                      },
+                      "updated_at": {
+                        "type": "string",
+                        "example": "2022-07-09T21:10:00Z"
+                      },
+                      "closed_at": {},
+                      "author_association": {
+                        "type": "string",
+                        "example": "NONE"
+                      },
+                      "active_lock_reason": {},
+                      "body": {
+                        "type": "string",
+                        "example": "Please, can anyone make us a tutorial how to properly start the react native app? I need it just to learn the \"good practice\"...How can i make a fake api, or something just to bypass the login page and have access to the rest of the app?? I don't need the voice server, i just want to learn how to use navigation, typescript and the way how Ben was writting this app. I'm stuck at \"Going to the moon....\" screen. Thank you!!!"
+                      },
+                      "reactions": {
+                        "type": "object",
+                        "properties": {
+                          "url": {
+                            "type": "string",
+                            "example": "https://api.github.com/repos/benawad/dogehouse/issues/2880/reactions"
+                          },
+                          "total_count": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "+1": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "-1": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "laugh": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "hooray": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "confused": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "heart": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "rocket": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "eyes": {
+                            "type": "number",
+                            "example": 0
+                          }
+                        }
+                      },
+                      "timeline_url": {
+                        "type": "string",
+                        "example": "https://api.github.com/repos/benawad/dogehouse/issues/2880/timeline"
+                      },
+                      "performed_via_github_app": {},
+                      "state_reason": {}
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
